@@ -1,5 +1,7 @@
 # Corrida de Cachorro TS — Um Dia de Corridas
 
+![Corrida de galgos com o balcão de apostas](docs/screenshot.png)
+
 Laboratório 1 do **Use a Cabeça! C#** reescrito em **TypeScript**: um simulador de corrida de galgos com salão de
 apostas para três apostadores. Front em React + Vite, API em Fastify, Postgres com Kysely e tudo sobe com Docker.
 
@@ -31,6 +33,7 @@ docker compose up -d          # ou: make up
 packages/domain/   Greyhound, Guy, Bet e Race em TS puro + testes (Vitest)
 apps/web/          React + Vite: pista, balcão de apostas e histórico
 apps/api/          Fastify + Kysely: /api/races, /api/stats, migrations
+e2e/               Playwright (ponta a ponta e o print do README)
 docs/cronograma.md plano dos três laboratórios
 ```
 
@@ -43,3 +46,12 @@ make check                            # ESLint + tsc + Vitest no container
 
 Branches `feature/<nome>`, commits `tipo(escopo): descrição` com até 6 arquivos. Detalhes na skill
 `.claude/skills/lab-ts/SKILL.md`.
+
+## Testes
+
+```bash
+make check       # ESLint + tsc + Vitest (domínio, tela com jsdom e unitários da API), no container
+make test-int    # API contra o Postgres real, no banco lab_test (precisa do `docker compose up -d`)
+make e2e         # Playwright no Docker contra http://web:5173 (precisa do app no ar)
+make screenshot  # refaz docs/screenshot.png: joga até o meio da corrida em 1280×800
+```
