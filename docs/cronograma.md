@@ -84,8 +84,8 @@ Comportamento esperado do Docker em todos os labs:
 
 Entrega: um template de monorepo que sobe com Docker e uma "Lista de Contatos" igual à do cap. 1, servindo de ensaio geral.
 
-- [ ] Criar o template (pnpm workspaces, `tsconfig` base estrito, ESLint, Prettier, Vitest)
-- [ ] Dockerfiles de `web` e `api` (dev e multi-stage), `docker-compose.yml` com Postgres e healthcheck
+- [x] Criar o template (pnpm workspaces, `tsconfig` base estrito, ESLint, Prettier, Vitest)
+- [x] Dockerfiles de `web` e `api` (dev e multi-stage), `docker-compose.yml` com Postgres e healthcheck
 - [ ] Cap. 1 em TS: tabela `people`, CRUD na API, formulário na página ligado aos dados
 - [ ] Cap. 2 em TS: módulos, `main.ts` como ponto de entrada, laços e `if/else` em pequenos exercícios com teste
 
@@ -122,10 +122,10 @@ Tarefas por semana:
 
 Pronto quando:
 
-- [ ] `docker compose up` abre a corrida em `localhost:5173` sem nenhum passo manual
-- [ ] Os três apostam, a corrida anima até um vencedor e os saldos mudam pela regra do dobro ou nada
-- [ ] Aposta fora de R$ 5 a R$ 15 ou sem saldo é recusada, com teste cobrindo os dois casos
-- [ ] O histórico de corridas sobrevive a `docker compose down` e `up` (volume do Postgres)
+- [x] `docker compose up` abre a corrida em `localhost:5173` sem nenhum passo manual
+- [x] Os três apostam, a corrida anima até um vencedor e os saldos mudam pela regra do dobro ou nada
+- [x] Aposta fora de R$ 5 a R$ 15 ou sem saldo é recusada, com teste cobrindo os dois casos
+- [x] O histórico de corridas sobrevive a `docker compose down` e `up` (volume do Postgres)
 
 ## Laboratório 2 — A Missão (semanas de 28/12 a 25/01)
 
