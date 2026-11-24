@@ -44,5 +44,16 @@ services:
     depends_on:
       install: { condition: service_completed_successfully }
 
+  # Testes de ponta a ponta (make e2e): Playwright no Docker contra o app de dev. Fora do `up` normal (profile).
+  e2e:
+    image: mcr.microsoft.com/playwright:v1.49.1-noble
+    profiles: [e2e]
+    user: "1000:1000"
+    working_dir: /app
+    volumes: [".:/app"]
+    environment: { HOME: /tmp, E2E_BASE_URL: "http://web:5173" }
+    depends_on: [web]
+    command: npx -y pnpm@9.15.0 --filter e2e e2e
+
 volumes:
   db-data:
